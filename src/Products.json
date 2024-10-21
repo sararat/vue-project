@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "T-Shirt",
+    "detail": "Clothe Co. Mens Heavyweight Cotton T-Shirt Plain Tee",
+    "coverimage": "src/img/shirt.jpg",
+    "price": "$19.99"
+  },
+  {
+    "id": 2,
+    "name": "Pants",
+    "detail": "Womens Trouser Pants",
+    "coverimage": "/src/img/pants.jpg",
+    "price": "$29.99"
+  },
+  {
+    "id": 3,
+    "name": "Shoes",
+    "detail": "Nike Revolution 7",
+    "coverimage": "/src/img/shoes.png",
+    "price": "$50.99"
+  },
+  {
+    "id": 4,
+    "name": "Bag",
+    "detail": "Yellow Bag Backpack/Office Bag/School Bag/College Bag/Business Bag/Unisex Travel Backpack",
+    "coverimage": "/src/img/bag.jpg",
+    "price": "$30.99"
+  },
+  {
+    "id": 5,
+    "name": "Watch",
+    "detail": "BEN NEVIS Watch, Mens Watch, Minimalist Fashion Simple Wrist Watch Analog Date with Leather",
+    "coverimage": "/src/img/wacth.jpg",
+    "price": "$27.99"
+  },
+  {
+    "id": 6,
+    "name": "Cap",
+    "detail": "47 Brand New York Yankees Mens Cap Black",
+    "coverimage": "/src/img/cap.jpg",
+    "price": "$40.25"
+  }
+]
