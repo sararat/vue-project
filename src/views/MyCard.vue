@@ -1,10 +1,10 @@
 <template>
   <div class="card">
-    <img :src="coverimage" :alt="name" style="width:100% " />
+    <img :src="image" :alt="title" style="width:100% " />
     <div className="container">
-      <h1>{{ name }}</h1>
-      <p class="price">{{ price }}</p>
-      <p>{{ detail }}</p>
+      <h3>{{ title }}</h3>
+      <p class="price">Price : {{ price }} $</p>
+      
       
       <router-link :to="`/products/${id}`">
         <button>View Details</button>
@@ -21,15 +21,15 @@ export default {
       type: [String, Number],
       required: true,
     },
-    name: {
+    title: {
       type: String,
       required: true,
     },
-    detail: {
+    description: {
       type: String,
       default: "",
     },
-    coverimage: {
+    image: {
       type: String,
       required: true,
     },
@@ -44,7 +44,7 @@ export default {
 .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 400px;
+  max-width: 360px;
   margin: auto;
   text-align: center;
   font-family: arial;
@@ -52,7 +52,6 @@ export default {
   border: 1px solid #ddd;
   border-radius: 8px;
   text-align: center;
-
   overflow: hidden;
   /* Prevent content overflow */
 
@@ -66,45 +65,40 @@ export default {
 img {
   border-radius: 5px 5px 0 0;
   height: 350px;
-  width: 350px;
+  width: 100px;
 }
 
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
-  margin: 20px;
+  margin: 5px;
   width: 100%;
-  height: 200px;
-  margin-top: 10px;
+  height: 250px;
+  margin-top: 30px;
 }
 
 
 .price {
   color: grey;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .card button {
   border: none;
   outline: 0;
-  padding: 12px;
+  padding: 15px;
   color: white;
   background-color: #000;
   text-align: center;
   cursor: pointer;
   width: 300px;
   font-size: 18px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .card button:hover {
   opacity: 0.7;
 }
 
-section {
-  padding: 16px 24px;
-  background: #f3f3f3;
-  width: 100%;
-  margin-right: 24px;
-}
+
 </style>
