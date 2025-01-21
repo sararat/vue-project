@@ -20,9 +20,9 @@ onMounted(() => {
     });
 });
 
-const getImageUrl = (path) => {
-  return new URL(`/${path}`, import.meta.url).href;
-};
+// const getImageUrl = (path) => {
+//   return new URL(`/${path}`, import.meta.url).href;
+// };
 </script>
 
 <template>

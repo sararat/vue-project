@@ -8,8 +8,13 @@ import MyCard from '@/views/MyCard.vue';
       <h1>Products</h1>
     </div>
     <div className="grid-container">
-      <MyCard v-for="item in items" :key="item.id" :id="item.id" :title="item.title" :description="item.description"
-        :image="item.image" :price="item.price" />
+      <MyCard v-for="item in items" 
+      :key="item.id" 
+      :id="item.id" 
+      :title="item.title" 
+      :description="item.description"
+      :image="item.image" 
+      :price="item.price" />
 
     </div>
   </main>
@@ -32,7 +37,7 @@ export default {
       .then(json => {
          this.items = json;
      })
-       .catch(error => {
+      .catch(error => {
          console.error('Error fetching products:', error);
        });
    }

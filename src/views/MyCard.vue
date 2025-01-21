@@ -5,7 +5,6 @@
       <h3>{{ title }}</h3>
       <p class="price">Price : {{ price }} $</p>
       
-      
       <router-link :to="`/products/${id}`">
         <button>View Details</button>
       </router-link>
