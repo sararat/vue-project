@@ -8,16 +8,11 @@ import MyCard from '@/views/MyCard.vue';
       <h1>Products</h1>
     </div>
     <div className="grid-container">
-      <MyCard v-for="item in items" 
-      :key="item.id" 
-      :id="item.id" 
-      :title="item.title" 
-      :description="item.description"
-      :image="item.image" 
-      :price="item.price" />
-
+      <MyCard v-for="item in items" :key="item.id" :id="item.id" :title="item.title" :description="item.description"
+        :image="item.image" :price="item.price" />
     </div>
   </main>
+
 </template>
 <script scope>
 export default {
@@ -25,22 +20,22 @@ export default {
   components: {
     MyCard,
   },
-  
+
   data() {
     return {
-      items : [],
+      items: [],
     };
   },
   created() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then(json => {
-         this.items = json;
-     })
+        this.items = json;
+      })
       .catch(error => {
-         console.error('Error fetching products:', error);
-       });
-   }
+        console.error('Error fetching products:', error);
+      });
+  }
 };
 </script>
 <style scoped>
