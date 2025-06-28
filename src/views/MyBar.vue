@@ -20,8 +20,11 @@ const { input } = storeToRefs(productStore)
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/products">MyCard</router-link></li>
         <li><router-link to="/about">About</router-link></li>
+        <li>
+          <routerLink to="/cart" aria-current="page">ตะกร้าสินค้า</routerLink>
+        </li>
         <li class="search-container">
-          <input v-model="input"  @keyup.enter="onSearch" type="text" placeholder="Search..." class="search-input" />
+          <input v-model="input" @keyup.enter="onSearch" type="text" placeholder="Search..." class="search-input" />
           <font-awesome-icon icon="search" class="search-icon" />
         </li>
       </ul>
@@ -32,14 +35,14 @@ const { input } = storeToRefs(productStore)
 
 
 <style scoped>
-/* Navbar Styles */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Noto Sans Thai", sans-serif;
+  font-optical-sizing: auto;
 }
 
 .navbar {
@@ -49,56 +52,31 @@ const { input } = storeToRefs(productStore)
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0px 0px;
-  overflow: hidden;
+  padding: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 9999;
 }
 
 .wrapper {
-  position: relative;
   max-width: 1300px;
-  height: 140px;
-  line-height: 70px;
+  height: 130px;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 15px;
 }
 
-.wrapper .logo img {
-  display: flex;
-  align-items: center;
-  width: 120px;
+.logo img {
+  width: 100px;
   height: auto;
-  margin-top: 10px;
-  margin-right: 10px;
 }
 
-.wrapper .nav-links {
-  display: inline-flex;
-  z-index: 10;
-}
-
-
-
-.nav-links li a {
-  color: #f2f2f2;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 500;
-  padding: 9px 15px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-
-}
-
-.nav-links li a:hover {
-  background: #00418b;
-}
-
-.nav-links .mobile-item {
+.menu-toggle {
   display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
 }
 
 .nav-links {
@@ -106,12 +84,21 @@ const { input } = storeToRefs(productStore)
   align-items: center;
   list-style: none;
   gap: 20px;
-  margin: 0;
-  padding: 0;
 }
 
-.nav-links li {
-  position: relative;
+.nav-links li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  
+}
+
+.nav-links li a:hover {
+  background: #00418b;
 }
 
 .search-container {
@@ -135,5 +122,69 @@ const { input } = storeToRefs(productStore)
   color: #888;
   font-size: 14px;
   pointer-events: none;
+}
+
+/* 🔻 Responsive styles */
+@media (max-width: 430px) {
+  /* ปรับ wrapper ให้เล็กลง */
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    align-self: flex-end;
+  }
+
+  .nav-links {
+    position: static;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    display: none;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .search-input {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-item {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
 }
 </style>

@@ -42,12 +42,15 @@ const cart_store = useCartStore()
 
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+
 /* Reset & Font */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Noto Sans Thai", sans-serif;
+  font-optical-sizing: auto;
 }
 
 body {
@@ -128,24 +131,29 @@ main {
   cursor: pointer;
   display: block;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 /* ปุ่มสีเขียว */
 .btn-detail {
   background-color: #28a745;
+  text-decoration: none;
   color: white;
 }
 .btn-detail:hover {
   background-color: #218838;
+  text-decoration: none;
 }
 
 /* ปุ่มสีน้ำเงิน */
 .btn-cart {
   background-color: #007bff;
+  text-decoration: none;
   color: white;
 }
 .btn-cart:hover {
   background-color: #0056b3;
+  text-decoration: none;
 }
 
 /* Responsive Adjustments */
